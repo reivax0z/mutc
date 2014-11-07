@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Welcome to the Official Site of the Melbourne University Tennis Club. Here, MUTC members (and anyone wishing to join the club) can read up on all the latest news and information.">
+	<meta name="keywords" content="melbourne university tennis club, parkville, mutc, competitions, social events, services, court hire, coaching, training">
+    <meta name="author" content="Melbourne University Tennis Club (MUTC)">
+    
+    <link rel="icon" href="http://musa.net.au/tennis/favicon.ico">
+
+    <title>Melbourne University Tennis Club</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../src/bootstrap-3.2.0/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../../src/bootstrap-3.2.0/dist/docs/assets/css/docs.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+
+  </head>
+
+  <body>
+  <div id="fb-root"></div>
+  <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1491362084470419',
+          xfbml      : true,
+          version    : 'v2.1'
+        });
+		
+		/* make the API call */
+		
+		FB.api(
+			"/melbourneunitennis/events?limit=10&since=1383119993&access_token=1491362084470419|-0883jiZIdvd2IrPMZ4Cb-Gbnb8",
+			function (response) {
+			  if (response && !response.error) {
+				displayEvents(response);
+			  }
+			}
+		);
+		
+		FB.api(
+			"/melbourneunitennis/feed?access_token=1491362084470419|-0883jiZIdvd2IrPMZ4Cb-Gbnb8",
+			function (response) {
+			  if (response && !response.error) {
+				displayFeed(response);
+			  }
+			}
+		);
+      };
+
+    </script>
+
+	<div id="header"></div>
+	
+	<!-- Docs page layout -->
+    <div class="bs-docs-header" id="content">
+      <div class="container">
+        <h1>Melbourne University Tennis Club</h1>
+        <h2>- Welcome to the Official Site of the MUTC -</h2>
+      </div>
+    </div>
+	
+	<div class="jumbotron">
+	  <div class="container">
+			<p>Here, MUTC members (and anyone wishing to join the club) can read up on all the latest news and information.<br><br>
+			Established in the 1880's, we are one of the largest and most active sporting clubs at the University of Melbourne. Through our affiliation with Tennis Victoria, we aim to provide year-round tennis through internal and regional competitions, coaching, squad sessions, and court access. A number of social events are also arranged throughout the year for members and friends to enjoy, which has included Melbourne Park nights, Dinners, Trivia Nights, and the much-anticipated annual MUTC Cocktail Party.</p>
+		</div>
+	</div>
+
+    <div class="main-content container bs-docs-container">
+
+      <div class="row">
+        
+		<div class="col-md-12" role="main">
+		  <div class="padding15 margin20">
+			<h1 id="events" class="page-header">Upcoming Events</h1>
+				<div id="up_event_div"></div>
+		  </div>
+			
+		  <div class="padding15 margin20">
+			<h1 id="news" class="page-header">Latest News</h1>
+				<div id="feed_div"></div>
+		  </div>
+		</div>
+
+	</div>
+	</div>
+	
+	 <!-- Footer
+	================================================== -->
+	<div id="footer">
+	</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="../../src/bootstrap-3.2.0/dist/js/bootstrap.min.js"></script>
+    <script src="../../src/bootstrap-3.2.0/dist/js/mutc.js"></script>
+  </body>
+</html>
